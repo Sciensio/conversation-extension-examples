@@ -1,5 +1,5 @@
 'use strict';
-require('dotenv').config();
+// require('dotenv').config();
 
 const express = require('express');
 const Smooch = require('smooch-core');
@@ -39,7 +39,7 @@ function appUserMessageHandler(req, res) {
     if (req.body.trigger !== 'message:appUser') {
       return res.end();
     }
-    
+
     let messageData;
 
     for (const message of req.body.messages) {
@@ -54,10 +54,10 @@ function appUserMessageHandler(req, res) {
  			.then(() => res.end())
  			.catch((err) => {
  				console.log('Error in webhook handler', err);
- 				res.status(500).send(err.message);	
+ 				res.status(500).send(err.message);
  			})
     }
-    
+
     res.end();
 }
 
