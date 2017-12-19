@@ -70,7 +70,7 @@ function sendWebView(userId, text, buttonText, path) {
                 type: 'webview',
                 text: buttonText,
                 uri: `${process.env.SERVICE_URL}/examples/${path}?userId=${userId}&appId=${process.env.APP_ID}`,
-                fallback: process.env.SERVICE_URL
+                fallback: `${process.env.SERVICE_URL}/examples/${path}?userId=${userId}&appId=${process.env.APP_ID}`
             }]
         });
 }
